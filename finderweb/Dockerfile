@@ -4,6 +4,10 @@ MAINTAINER  github.com/cf2012
 # 下载代码
 ADD http://www.finderweb.net/download/finder-web-2.3.3.war /usr/local/tomcat/webapps
 
+WORKDIR /usr/local/tomcat
+
+VOLUME ["/usr/local/tomcat/webapps "]
+
 # 部署到 tomcat 的 webapp/ROOT 目录下
 RUN set -ex; \
     cd /usr/local/tomcat/webapps \
